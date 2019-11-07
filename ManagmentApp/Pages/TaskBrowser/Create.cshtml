@@ -1,0 +1,15 @@
+﻿@page
+@model ManagmentApp.Pages.TaskBrowser.CreateModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/TaskBrowser/_Layout.cshtml";
+}
+
+<form method="post" autocomplete="off">
+    <label for="startDate">Start date</label><br/>
+    <input type="datetime-local" name="startDate"/><br/>
+    <label for="endpoint">Endpoint to call</label><br/>
+    <input type="text" name="endpoint"/>
+    <input name="type" value="echo" hidden/><br/>
+    <button type="submit">Create</button>
+</form>

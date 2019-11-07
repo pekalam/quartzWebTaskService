@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "Shared/_Layout";
+}
+
+<nav>
+    <ul>
+        <li active-on="Groups">
+            <a asp-page="Groups">Groups</a>
+        </li>
+        <li active-on="Tasks">
+            <a asp-page="Tasks">Tasks</a>
+        </li>
+        <li active-on="Create">
+            <a asp-page="Create">Create task</a>
+        </li>
+    </ul>
+
+
+</nav>
+
+
+@if (TempData.ContainsKey("Notification"))
+{
+    <p>@TempData["Notification"]</p>
+}
+
+@RenderBody()

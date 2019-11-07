@@ -1,0 +1,22 @@
+﻿@page
+@model ManagmentApp.Pages.TaskBrowser.Groups.GroupsModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/TaskBrowser/_Layout.cshtml";
+}
+
+@if (Model.GroupStats.Count() == 0)
+{
+    <p>There are no pending tasks</p>
+}
+else
+{
+    @foreach (var group in Model.GroupStats)
+     {
+         <div>
+             <p>@group.GroupName</p>
+             <p>Total jobs: @group.TaskCount</p>
+         </div>
+     }
+}
+

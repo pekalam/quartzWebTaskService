@@ -1,0 +1,11 @@
+﻿@page "{groupName}/{taskId}"
+@model ManagmentApp.Pages.TaskBrowser.TaskDetailsModel
+@{
+    ViewData["Title"] = "TaskDetails";
+    Layout = "~/Pages/TaskBrowser/_Layout.cshtml";
+}
+`
+<h3>Task @Model.TaskId Details:</h3>
+<br />
+<p>@Model.TaskDetails</p>
+

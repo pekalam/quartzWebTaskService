@@ -1,0 +1,29 @@
+﻿@page
+@model ManagmentApp.Pages.TaskBrowser.TasksModel
+@{
+    ViewData["Title"] = "Tasks";
+    Layout = "~/Pages/TaskBrowser/_Layout.cshtml";
+}
+
+@if (Model.TasksStats.Count() == 0)
+{
+    <p>There are no pending tasks</p>
+}
+else
+{
+    @foreach (var task in Model.TasksStats)
+     {
+<div>
+    <br />
+    <p>============</p>
+    <p>Id: @task.Id</p>
+    <p>TaskId: <a asp-page="TaskDetails" asp-route-groupName="echo" asp-route-taskId="@task.TaskId.ToString()">@task.TaskId</a></p>
+    <p>Type: @task.Type</p>
+    <p>Group: @task.Group</p>
+    <p>Endpoint to call: @task.Endpoint</p>
+    <p>Start date: @task.StartDate.ToString()</p>
+    <p>Time left: @((task.StartDate.ToUniversalTime().Subtract(DateTime.UtcNow)).ToString())</p>
+    <p>============</p>
+</div>
+     }
+}
